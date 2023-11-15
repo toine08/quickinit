@@ -1,3 +1,5 @@
+from git import Repo
+
 import os
 import sys
 import subprocess
@@ -6,32 +8,20 @@ import shutil
 def prompt(question):
     return input(question)
 
-def create_project_structure(project_path, project_type):
-    os.mkdir(project_path)
-    # Customize the project structure creation based on the project type
-    if project_type == "python":
-        create_python_project_structure(project_path)
-    elif project_type == "go":
-        create_go_project_structure(project_path)
-    elif project_type == "web":
-        create_web_project_structure(project_path)
-    elif project_type == "nextjs":
-        create_nextjs_project_structure(project_path)
-    else:
-        print("Error: Unknown project type. Supported types are python, go, web, nextjs, etc.")
-
 def create_python_project_structure(project_path):
     # Create basic Python project structure (customize as needed)
     os.mkdir(os.path.join(project_path, "src"))
     os.mkdir(os.path.join(project_path, "tests"))
     # ... add more directories as needed
 
-def create_go_project_structure(project_path):
-    # Create basic Go project structure (customize as needed)
-    os.mkdir(os.path.join(project_path, "cmd"))
-    os.mkdir(os.path.join(project_path, "pkg"))
-    os.mkdir(os.path.join(project_path, "internal"))
-    # ... add more directories as needed
+def create_go_project_structure(project_name):
+    git_url = 'https://github.com/golang-standards/project-layout'
+    destination = os.path.join(os.getcwd(), project_name)
+    try:
+        Repo.clone_from(git_url, destination)
+    except ValueError:
+        sys.exit("An error occured...")
+
 
 def create_vanilla_project_structure(project_name):
     src = 'templates/template_web'
@@ -54,6 +44,11 @@ def open_vscode(project_path):
     except subprocess.CalledProcessError:
         print("Error: Unable to open VSCode. Make sure it's installed and in your PATH.")
 
+def end_program(project_name):
+    open_vscode(project_name)
+    print("VSCode open...")
+    sys.exit("Exiting the program...")
+
 def main():
     # Interactively prompt the user for project information
     project_type = prompt("Enter the project type (python, go, vanilla, nextjs, etc.): ")
@@ -61,13 +56,13 @@ def main():
 
     if project_type == "nextjs":
         create_nextjs_project_structure(project_name)
-        open_vscode(project_name)
-        sys.exit("Exiting the program...")
-
+        end_program(project_name)
     elif project_type == "vanilla":
         create_vanilla_project_structure(project_name)
-        open_vscode(project_name)
-        sys.exit("Exiting the program...")
+        end_program(project_name)
+    elif project_type == "go":
+        create_go_project_structure(project_name)
+        end_program(project_name)
 
 
 

@@ -1,0 +1,53 @@
+# Ignore build/compiled files
+**/__pycache__/
+**/*.pyc
+
+# Ignore environments
+**/.venv
+env/
+venv/
+
+# Ignore editors
+**/.idea/
+**/.vscode/
+
+# Ignore logs and databases
+**/*.log
+**/*.sql
+**/*.sqlite
+
+# Ignore OS generated files
+**/.DS_Store
+.DS_Store
+**/*.swp
+
+# Ignore node/npm files
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignore python egg files
+**/*.egg
+**/*.egg-info
+
+# Ignore dists
+dist/
+build/
+**/*.egg-info/
+
+# Cache
+.pytest_cache/
+__pycache__
+
+# Coverage reports
+htmlcov
+.coverage
+.tox
+
+# Static files
+public/
+static/
+
+# Temporary files  
+**/*.bak
+**/~*
