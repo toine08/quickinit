@@ -35,7 +35,7 @@ def create_nextjs_project_structure(project_name):
     try:
         subprocess.run(f'npx create-next-app@latest {project_name}', shell=True)
     except subprocess.CalledProcessError:
-        sys.exit("Command not found please install npm or ")
+        sys.exit("Command not found please install npm or your favorite package management ")
     # ... add more directories as needed
 
 def open_vscode(project_path):
