@@ -100,7 +100,7 @@ def main():
                 create_rust_project_structure()
                 end_program()
             case "More":
-                print(f"If there is not the language you want to use you can write an issue on this github: https://github.com/toine08/clitool")
+                print(f"If there is not the language you want to use you can write an issue on this repo: https://github.com/toine08/clitool")
                 sys.exit()
 
     except KeyboardInterrupt:
