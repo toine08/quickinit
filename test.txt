@@ -1,9 +1,0 @@
- project_type = prompt(f"""Enter the project type:
-1. Python
-2. Vanilla
-3. Nextjs
-4. Golang
-5. Rust
-6. More
-7. Help
-""")

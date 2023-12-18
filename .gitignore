@@ -9,6 +9,7 @@ venv/
 
 # Ignore editors
 **/.idea/
+.idea
 **/.vscode/
 
 # Ignore logs and databases
