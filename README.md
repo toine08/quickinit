@@ -1,8 +1,6 @@
- Here is a README.md file for your project:
+# quickinit
 
-# clitool
-
-clitool is a command line tool to quickly generate project structures for different programming languages and frameworks. 
+quickinit is a command line tool to quickly generate project structures for different programming languages and frameworks. 
 
 ## Features
 
@@ -17,7 +15,7 @@ clitool is a command line tool to quickly generate project structures for differ
 ## Usage
 
 ```
-python clitool.py
+pip install quickinit
 ```
 
 Run the script and answer the prompts:

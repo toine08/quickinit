@@ -104,7 +104,7 @@ def main():
                 sys.exit()
 
     except KeyboardInterrupt:
-        print("Exiting... thanks for using clitool")
+        print("Exiting... thanks for using quickinit")
         sys.exit()
         
 if __name__ == "__main__":

@@ -52,3 +52,5 @@ static/
 # Temporary files  
 **/*.bak
 **/~*
+
+.pypirc
