@@ -1,18 +1,17 @@
 """
 quickinit - Quick scaffolding for coding projects
 Usage: 
-    import clitool
-    clitool.main()
+    import quickinit
+    quickinit.main()
 
 Requirements:
     inquirer
-    gitpython 
 """
 
 import sys
 import importlib
 
-required = {"inquirer", "gitpython"}
+required = {"inquirer"}
 missing = [] 
 for package in required:
     try: 
@@ -24,6 +23,5 @@ if missing:
    print(f"Missing required dependencies: {missing}")
    sys.exit(1)
    
-__version__ = "0.1.0" 
+__version__ = "0.0.2" 
 
-from .clitool import main

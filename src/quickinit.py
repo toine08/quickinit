@@ -1,10 +1,9 @@
-from git import Repo
-
 import os
 import sys
 import subprocess
 import shutil
 import inquirer
+from git import Repo
 
 questions = [
     inquirer.List('stack',
@@ -76,7 +75,7 @@ def open_vscode(project_path):
 def end_program(project_name):
     open_vscode(project_name)
     print("VSCode open...")
-    sys.exit("Exiting the program...")
+    os.system("exit")
 
 def main():
 
@@ -104,7 +103,7 @@ def main():
                 sys.exit()
 
     except KeyboardInterrupt:
-        print("Exiting... thanks for using quickinit")
+        print("\nExiting... thanks for using quickinit")
         sys.exit()
         
 if __name__ == "__main__":

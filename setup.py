@@ -12,7 +12,7 @@ setuptools.setup(
 Generate starter code and project structure from the command line so you can start coding faster.""",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/toine08/clitool",
+    url="https://github.com/toine08/quickinit",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
